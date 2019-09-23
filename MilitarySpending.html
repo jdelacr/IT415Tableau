@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Week 3: Military Spending</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="HMcss.css">
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+<nav-Bar></nav-Bar>
+
+            <v-content>
+                <v-container fluid>
+                    <h1 class="display-2 text-center">Military Spending From 2012 to 2017</h1>
+
+                    <v-card class="mx-auto" max-width="1500">
+                        <div id="chart_div"></div>
+                    </v-card>
+
+                </v-container>
+
+                <v-footer absolute class="font-weight-medium" dark>
+                    <v-col class="text-center" cols="12">
+                        {{ new Date().getFullYear() }} — <strong>IT 415 Information Visualization</strong>
+                    </v-col>
+                </v-footer>
+            </v-content>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="Assets/Vuejs.js"></script>
+    <script>
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'United States', 'China', 'Saudi Arabia', 'India', 'France', 'Russia',
+                    'United Kingdom', 'Germany', 'Japan', 'South Korea'
+                ],
+                ['2012', 684780, 157391, 56498, 47217, 60035, 81469, 58496, 46471, 60012, 31952],
+                ['2013', 639704, 179881, 67020, 47404, 62417, 88353, 56962, 45931, 49024, 34137],
+                ['2014', 609914, 200772, 80726, 50014, 63614, 84697, 59183, 46103, 46881, 37552],
+                ['2015', 596105, 214093, 87186, 51296, 55342, 66419, 53862, 39813, 42106, 36571],
+                ['2016', 600107, 216031, 63673, 56638, 57359, 69246, 48119, 41580, 46472, 36935],
+                ['2017', 609758, 228231, 69414, 63924, 57770, 66335, 47193, 44330, 45387, 39153]
+            ]);
+
+            var options = {
+                title: 'Spendings in Billions',
+                curveType: 'function',
+                legend: {
+                    position: 'bottom'
+                }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+            chart.draw(data, options);
+        };
+    </script>
+</body>
+
+</html>

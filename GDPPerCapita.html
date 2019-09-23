@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Week 3: GDP</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="HMcss.css">
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <nav-Bar></nav-Bar>
+
+            <v-content>
+                <v-container fluid>
+                    <h1 class="display-2 text-center">GPD and Military Per Capita in 2017</h1>
+
+                    <v-card class="mx-auto" max-width="1500">
+                        <div id="chart_div"></div>
+                    </v-card>
+
+                </v-container>
+
+                <v-footer absolute class="font-weight-medium" dark>
+                    <v-col class="text-center" cols="12">
+                        {{ new Date().getFullYear() }} — <strong>IT 415 Information Visualization</strong>
+                    </v-col>
+                </v-footer>
+            </v-content>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="Assets/Vuejs.js"></script>
+    <script>
+        google.charts.load('current', {
+            'packages': ['bar']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Military vs GDP', 'Military Per Capita', 'GDP Per Capita'],
+                ['United States', 1867.1, 59927.9],
+                ['China', 161.6, 8759],
+                ['Saudi Arabia', 2137.3, 20803.7],
+                ['India', 48.2, 1981.5],
+                ['France', 929.8, 38679.1],
+                ['Russia', 462, 10750],
+                ['United Kingdom', 701.6, 39932.1],
+                ['Germany', 552.7, 44681.1],
+                ['Japan', 356, 38332],
+                ['South Korea', 768.3, 29742.84],
+            ]);
+
+            var options = {
+                chart: {
+                    title: 'Per Capita',
+                    subtitle: 'In USD',
+                }
+            };
+
+            var chart = new google.charts.Bar(document.getElementById('chart_div'));
+
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+        }
+    </script>
+</body>
+
+</html>

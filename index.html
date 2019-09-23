@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>IT 415: Information Visualization</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="HMcss.css">
+</head>
+
+<body>
+  <div id="app">
+    <v-app>
+      <nav-Bar></nav-Bar>
+
+      <v-content>
+        <v-container fluid>
+          <h1 class="display-2">Welcome to Jan Justyn Dela Cruz's website running in Abyss Web Server</h1>
+        </v-container>
+        <v-footer absolute class="font-weight-medium" dark>
+          <v-col class="text-center" cols="12">
+            {{ new Date().getFullYear() }} — <strong>IT 415 Information Visualization</strong>
+          </v-col>
+        </v-footer>
+      </v-content>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script src="Assets/Vuejs.js"></script>
+</body>
+
+</html>

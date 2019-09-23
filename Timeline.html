@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IT 415: Information Visualization</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="HMcss.css">
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <nav-Bar></nav-Bar>
+
+            <v-content>
+                <v-container fluid>
+                    <iframe
+                        src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=14IAvq-X30n88hbPemyPkdD9gIMY4KLLBcmB9e4oNgGM&font=Default&lang=en&initial_zoom=0&height=650'
+                        width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen
+                        frameborder='0'></iframe>
+                    <v-card class="mx-auto">
+                        <v-card-title>Timeline Description</v-card-title>
+                        <v-divider></v-divider>
+                        <v-card-text>This is a timeline for the evolution of Nintendo that were popular. They are timelined based on their release and given with their description. I have used and played Nintendo's products when I was young until to this day. I currently have Nintendo Switch on my possession and I enjoy every minute of using it. The eason why I choose to timeline Nintendo is because of their high quality console and their games such as Mario, Zelda, Pokemon, and many more!</v-card-text>
+                    </v-card>
+                </v-container>
+                <v-footer absolute class="font-weight-medium" dark>
+                    <v-col class="text-center" cols="12">
+                        {{ new Date().getFullYear() }} — <strong>IT 415 Information Visualization</strong>
+                    </v-col>
+                </v-footer>
+            </v-content>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="Assets/Vuejs.js"></script>
+</body>
+
+</html>

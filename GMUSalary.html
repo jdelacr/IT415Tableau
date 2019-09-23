@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IT 415: Information Visualization</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="HMcss.css">
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <nav-Bar></nav-Bar>
+
+            <v-content>
+
+                <v-container fluid>
+                    <h1 class="display-2 text-center">GMU Salaries</h1>
+
+                    <v-card class="mx-auto" max-width="1500">
+                        <div id="chart_div"></div>
+                    </v-card>
+                    
+                    <v-card class="mx-auto" max-width="1500">
+                        <div id="chart_div2"></div>
+                    </v-card>
+
+                    <v-card class="mx-auto" max-width="1500">
+                        <div id="chart_div3"></div>
+                    </v-card>
+
+                </v-container>
+
+                <v-footer absolute class="font-weight-medium" dark>
+                    <v-col class="text-center" cols="12">
+                        {{ new Date().getFullYear() }} — <strong>IT 415 Information Visualization</strong>
+                    </v-col>
+                </v-footer>
+            </v-content>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="Assets/Vuejs.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', {
+            packages: ['corechart', 'bar']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = new google.visualization.arrayToDataTable([
+                ['Parts', 'Salary ', {
+                    role: 'style'
+                }],
+                ['Assistant Professor', 95057, 'red'],
+                ['Professor', 113718, 'gray'],
+                ['Associate Professor', 99441, 'green'],
+                ['Adjunct Professor', 64000, 'yellow'],
+                ['Instructor', 72000, 'cyan']
+            ]);
+            var data2 = new google.visualization.arrayToDataTable([
+                ['Parts', 'Salary ', {
+                    role: 'style'
+                }],
+                ['Administrative Assistant', 42682, 'red'],
+                ['Administrative and Office Specialist III', 51202, 'gray'],
+                ['Resident Director', 33489, 'green'],
+                ['Executive Assistant', 55000, 'yellow'],
+                ['Office Coordinator', 38000, 'cyan'],
+                ['Facilities Coordinator', 80000, 'orange'],
+                ['Program Administrator', 52000, 'purple'],
+                ['Receptionist', 45000, 'gray']
+            ]);
+            var data3 = new google.visualization.arrayToDataTable([
+                ['Parts', 'Salary ', {
+                    role: 'style'
+                }],
+                ['Graduate Teaching Assistant', 19455, 'red'],
+                ['Career Counselor', 45000, 'gray'],
+                ['Career Advisor', 43000, 'green'],
+                ['IT Manager', 96000, 'yellow'],
+                ['Network Engineer', 75947, 'orange']
+            ]);
+
+            // Set chart options
+            var options = {
+                title: "Faculty",
+                chartArea: {
+                    width: '50%'
+                },
+                hAxis: {
+                    title: 'Salaries',
+                    minValue: 0
+                },
+                legend: {
+                    position: "none"
+                }
+            };
+            var options2 = {
+                title: "Administration",
+                chartArea: {
+                    width: '50%'
+                },
+                hAxis: {
+                    title: 'Salaries',
+                    minValue: 0
+                },
+                legend: {
+                    position: "none"
+                }
+            };
+            var options3 = {
+                title: "Staff",
+                chartArea: {
+                    width: '50%'
+                },
+                hAxis: {
+                    title: 'Salaries',
+                    minValue: 0
+                },
+                legend: {
+                    position: "none"
+                }
+            };
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+            var chart2 = new google.visualization.BarChart(document.getElementById('chart_div2'));
+            var chart3 = new google.visualization.BarChart(document.getElementById('chart_div3'));
+
+            chart.draw(data, options);
+            chart2.draw(data2, options2);
+            chart3.draw(data3, options3);
+
+        }
+    </script>
+</body>
+
+</html>

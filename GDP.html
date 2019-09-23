@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Week 3: GDP</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="HMcss.css">
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <nav-Bar></nav-Bar>
+
+            <v-content>
+                <v-container fluid>
+                    <h1 class="display-2 text-center">GPD and Military Spending in 2017</h1>
+
+                    <v-card class="mx-auto" max-width="600">
+                        <div id="chart_div"></div>
+                    </v-card>
+
+                </v-container>
+
+                <v-footer absolute class="font-weight-medium" dark>
+                    <v-col class="text-center" cols="12">
+                        {{ new Date().getFullYear() }} — <strong>IT 415 Information Visualization</strong>
+                    </v-col>
+                </v-footer>
+            </v-content>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="Assets/Vuejs.js"></script>
+    <script>
+        google.charts.load("current", {
+            packages: ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['GDP and Military', 'GDP', 'Military', {
+                    role: 'annotation'
+                }],
+                ['United States', 194854, 609758, ''],
+                ['China', 1206228, 228231, ''],
+                ['Saudi Arabia', 68859, 69414, ''],
+                ['India', 265225, 63924, ''],
+                ['France', 258768, 57770, ''],
+                ['Russia', 157842, 66335, ''],
+                ['United Kingdom', 263997, 47193, ''],
+                ['Germany', 370061, 44330, ''],
+                ['Japan', 485995, 45387, ''],
+                ['South Korea', 157752, 39153, ''],
+            ]);
+
+            var options = {
+                title: 'GDP measured in trillion and Military is measured in Millions',
+                width: 600,
+                height: 400,
+                legend: {
+                    position: 'top',
+                    maxLines: 3
+                },
+                bar: {
+                    groupWidth: '75%'
+                },
+                isStacked: true,
+            };
+            var options_fullStacked = {
+                isStacked: 'percent',
+                height: 300,
+                legend: {
+                    position: 'top',
+                    maxLines: 3
+                },
+                vAxis: {
+                    minValue: 0,
+                    ticks: [0, .3, .6, .9, 1]
+                }
+            };
+
+            var view = new google.visualization.DataView(data);
+            var chart = new google.visualization.ColumnChart(document.getElementById("chart_div"));
+            chart.draw(view, options);
+        }
+    </script>
+</body>
+
+</html>
