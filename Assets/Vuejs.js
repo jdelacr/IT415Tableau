@@ -52,6 +52,11 @@ Vue.component("navBar", {
           <v-list-item @click="" href="GMUSalary.html">GMU Salaries</v-list-item>
           <v-list-item @click="" href="GMUComparison.html">GMU Salary Comparison</v-list-item>
         </v-list-group>
+
+        <v-list-item @click="" href="Tableau.html">
+        <v-list-item-title>
+          Week 5
+        </v-list-item-title>
     </v-list-item>
       </v-list>
     </v-navigation-drawer>

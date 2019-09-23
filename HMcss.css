@@ -4,3 +4,10 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
+.container{
+    overflow: hidden;
+}
+#viz1569255206805{
+    max-height: 780px !important;
+    overflow: scroll;
+}

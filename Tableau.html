@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IT 415: Information Visualization</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="HMcss.css">
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <nav-Bar></nav-Bar>
+
+            <v-content>
+                <v-container fluid>
+                    <h1 class="display-2 text-center">Tableau Public</h1>
+                    <v-card max-height="1000" max-width="800" class="mx-auto">
+                        <div class='tableauPlaceholder' id='viz1569255206805' style='position: relative; overflow-y: scroll;'><noscript><a
+                                    href='#'><img alt=' '
+                                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pe&#47;PetsByStates&#47;Dashboard1&#47;1_rss.png'
+                                        style='border: none' /></a></noscript><object class='tableauViz'
+                                style='display:none;'>
+                                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                <param name='embed_code_version' value='3' />
+                                <param name='site_root' value='' />
+                                <param name='name' value='PetsByStates&#47;Dashboard1' />
+                                <param name='tabs' value='no' />
+                                <param name='toolbar' value='yes' />
+                                <param name='static_image'
+                                    value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pe&#47;PetsByStates&#47;Dashboard1&#47;1.png' />
+                                <param name='animate_transition' value='yes' />
+                                <param name='display_static_image' value='yes' />
+                                <param name='display_spinner' value='yes' />
+                                <param name='display_overlay' value='yes' />
+                                <param name='display_count' value='yes' />
+                                <param name='filter' value='publish=yes' /></object></div>
+                    </v-card>
+                </v-container>
+                <v-footer absolute class="font-weight-medium" dark>
+                    <v-col class="text-center" cols="12">
+                        {{ new Date().getFullYear() }} — <strong>IT 415 Information Visualization</strong>
+                    </v-col>
+                </v-footer>
+            </v-content>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="Assets/Vuejs.js"></script>
+    <script type='text/javascript'>
+        var divElement = document.getElementById('viz1569255206805');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        if (divElement.offsetWidth > 800) {
+            vizElement.style.width = '920px';
+            vizElement.style.minHeight = '687px';
+            vizElement.style.maxHeight = '887px';
+            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+        } else if (divElement.offsetWidth > 500) {
+            vizElement.style.width = '920px';
+            vizElement.style.minHeight = '687px';
+            vizElement.style.maxHeight = '887px';
+            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+        } else {
+            vizElement.style.width = '100%';
+            vizElement.style.height = '587px';
+        }
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+</body>
+
+</html>
