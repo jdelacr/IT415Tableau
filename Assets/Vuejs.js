@@ -1,6 +1,6 @@
 Vue.component("navBar", {
     template: `
-    <v-navigation-drawer app permanent absolute left dark>
+    <v-navigation-drawer app permanent left dark>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">

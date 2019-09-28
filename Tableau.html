@@ -20,8 +20,8 @@
             <v-content>
                 <v-container fluid>
                     <h1 class="display-2 text-center">Tableau Public</h1>
-                    <v-card max-height="1000" max-width="800" class="mx-auto">
-                        <div class='tableauPlaceholder' id='viz1569255206805' style='position: relative; overflow-y: scroll;'><noscript><a
+                    <v-card>
+                        <div class='tableauPlaceholder' id='viz1569698628222' style='position: relative'><noscript><a
                                     href='#'><img alt=' '
                                         src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pe&#47;PetsByStates&#47;Dashboard1&#47;1_rss.png'
                                         style='border: none' /></a></noscript><object class='tableauViz'
@@ -45,16 +45,21 @@
                         <v-card-title>Visual Use Explanation:</v-card-title>
                         <v-divider></v-divider>
                         <v-card-text>
-                            The reason why I have chosen the bubble visualization is that it looks different than any visual information you see. I like to use uncommon use of data visualization because it makes users immerse that this information is much more different than the ones they commonly see. I have chosen the cat and dog data since I like the data use of cats and dogs. I have also chosen the cat and dog owning households since it interests me on which state has the most owned pets. 
+                            The reason why I have chosen the bubble visualization is that it looks different than any
+                            visual information you see. I like to use uncommon use of data visualization because it
+                            makes users immerse that this information is much more different than the ones they commonly
+                            see. I have chosen the cat and dog data since I like the data use of cats and dogs. I have
+                            also chosen the cat and dog owning households since it interests me on which state has the
+                            most owned pets.
                         </v-card-text>
                     </v-card>
                 </v-container>
-                <v-footer absolute class="font-weight-medium" dark>
-                    <v-col class="text-center" cols="12">
-                        {{ new Date().getFullYear() }} — <strong>IT 415 Information Visualization</strong>
-                    </v-col>
-                </v-footer>
             </v-content>
+            <v-footer app class="font-weight-medium" dark>
+                <v-col class="text-center" cols="12">
+                    {{ new Date().getFullYear() }} — <strong>IT 415 Information Visualization</strong>
+                </v-col>
+            </v-footer>
         </v-app>
     </div>
 
@@ -62,25 +67,21 @@
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
     <script src="Assets/Vuejs.js"></script>
     <script type='text/javascript'>
-        var divElement = document.getElementById('viz1569255206805');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        if (divElement.offsetWidth > 800) {
-            vizElement.style.width = '920px';
-            vizElement.style.minHeight = '687px';
-            vizElement.style.maxHeight = '887px';
-            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-        } else if (divElement.offsetWidth > 500) {
-            vizElement.style.width = '920px';
-            vizElement.style.minHeight = '687px';
-            vizElement.style.maxHeight = '887px';
-            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-        } else {
-            vizElement.style.width = '100%';
-            vizElement.style.height = '587px';
-        }
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    var divElement = document.getElementById('viz1569698628222');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    if (divElement.offsetWidth > 800) {
+        vizElement.style.width = '100%';
+        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+    } else if (divElement.offsetWidth > 500) {
+        vizElement.style.width = '100%';
+        vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+    } else {
+        vizElement.style.width = '100%';
+        vizElement.style.height = '727px';
+    }
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
     </script>
 </body>
 
