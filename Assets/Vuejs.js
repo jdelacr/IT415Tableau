@@ -1,5 +1,5 @@
 Vue.component("navBar", {
-    template: `
+  template: `
     <v-navigation-drawer app permanent left dark>
       <v-list-item>
         <v-list-item-content>
@@ -54,17 +54,26 @@ Vue.component("navBar", {
         </v-list-group>
 
         <v-list-item @click="" href="Tableau.html">
-        <v-list-item-title>
-          Week 5
-        </v-list-item-title>
-    </v-list-item>
+          <v-list-item-title>
+            Week 5
+          </v-list-item-title>
+        </v-list-item>
+
+        <v-list-group>
+          <template v-slot:activator>
+            <v-list-item-title>Week 7</v-list-item-title>
+          </template>
+          <v-list-item @click="" href="Chartjs.html">Chartjs</v-list-item>
+          <v-list-item @click="" href="D3.html">D3</v-list-item>
+        </v-list-group>
+        
       </v-list>
     </v-navigation-drawer>
     `
-  });
+});
 
 
-  new Vue({
-    el: '#app',
-    vuetify: new Vuetify(),
-  })
+new Vue({
+  el: '#app',
+  vuetify: new Vuetify(),
+})
