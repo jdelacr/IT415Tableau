@@ -66,6 +66,14 @@ Vue.component("navBar", {
           <v-list-item @click="" href="Chartjs.html">Chartjs</v-list-item>
           <v-list-item @click="" href="D3.html">D3</v-list-item>
         </v-list-group>
+
+        <v-list-group>
+          <template v-slot:activator>
+            <v-list-item-title>Week 8</v-list-item-title>
+          </template>
+          <v-list-item @click="" href="Project2Vid.html">Project 2: Video</v-list-item>
+          <v-list-item @click="" href="Project2.html">Project: Data</v-list-item>
+        </v-list-group>
         
       </v-list>
     </v-navigation-drawer>
