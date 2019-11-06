@@ -74,6 +74,12 @@ Vue.component("navBar", {
           <v-list-item @click="" href="Project2Vid.html">Project 2: Video</v-list-item>
           <v-list-item @click="" href="Project2.html">Project: Data</v-list-item>
         </v-list-group>
+
+        <v-list-item @click="" href="FinalProject.html">
+        <v-list-item-title>
+          Final Project
+        </v-list-item-title>
+      </v-list-item>
         
       </v-list>
     </v-navigation-drawer>
