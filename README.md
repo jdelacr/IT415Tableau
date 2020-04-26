@@ -1,5 +1,5 @@
-# IT415 Tableau Public
-Visualization information using Tableau public
+# IT415 Visualization
+Visualization information for IT 415
 
 # Link
 https://public.tableau.com/en-us/s/
